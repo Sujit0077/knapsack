@@ -1,0 +1,52 @@
+Step-by-Step Algorithm:
+Calculate the value-to-weight ratio for each item:
+
+For each item i, calculate the ratio:
+ratio𝑖=𝑣𝑖/𝑤𝑖 
+This ratio represents the value per unit weight of the item.
+
+Sort the items by their value-to-weight ratio:
+Sort all items in descending order based on the ratio 𝑣𝑖/𝑤𝑖
+This way, the item with the highest value per unit weight comes first.
+
+Take items until the knapsack is full:
+Start by taking the item with the highest value-to-weight ratio.
+If the knapsack has enough remaining capacity to take the whole item, take the entire item.
+If the knapsack cannot accommodate the entire item, take as much of it as can fit (i.e., take the fraction of the item that fits).
+
+Stop when the knapsack is full:
+Once the knapsack reaches its capacity, stop adding items.
+Return the total value:
+
+The total value is the sum of the values of the items (or fractions of items) you selected.
+
+
+
+
+
+The Fractional Knapsack Problem is an optimization problem where you are allowed to take fractions of items, rather than having to choose between taking an entire item or none at all. The objective is to maximize the total value of items placed in a knapsack with a fixed weight capacity.
+
+To solve it, the greedy algorithm is used: first, calculate the value-to-weight ratio for each item, then sort the items in descending order of this ratio. Starting with the highest ratio, take as much of each item as the knapsack can hold, either fully or partially, until the knapsack is full.
+
+The time complexity is O(n log n) due to sorting, which makes it an efficient solution for large datasets. The fractional knapsack problem is commonly used in real-world applications such as investment portfolio optimization, cargo loading, and budget allocation.
+
+Unlike the 0/1 knapsack problem, this approach guarantees the optimal solution when items can be divided into fractions.
+
+
+Advantages of Fractional Knapsack:
+Optimal Solution: The greedy algorithm always gives the best solution for fractional knapsack.
+Efficient: Time complexity is 
+𝑂(𝑛log𝑛)
+O(nlogn), making it fast for large inputs.
+Simple: Easy to implement and understand due to its straightforward greedy approach.
+Fractional Flexibility: Allows taking fractions of items, providing more flexibility in selection.
+
+Disadvantages of Fractional Knapsack:
+Not Applicable to 0/1 Knapsack: It doesn't work for problems where items cannot be divided.
+Limited to Fractional Items: It assumes items can be split, which may not always be realistic in real-world scenarios.
+
+Applications of Fractional Knapsack:
+Investment Portfolio: Maximizing returns from a limited budget by selecting the best-value assets.
+Cargo Loading: Optimizing the loading of cargo where fractional items can be taken.
+Budget Allocation: Allocating a fixed budget across various projects or resources to maximize value.
+Resource Distribution: Distributing resources such as time, labor, or raw materials to maximize productivity.
